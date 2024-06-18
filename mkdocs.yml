@@ -1,0 +1,63 @@
+site_name: Draftha
+site_url: https://example.com
+theme:
+  font:
+    text: Vazirmatn
+  language: fa
+  name: material
+  custom_dir: overrides
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      schema: default
+      primary: black 
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+        
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      peimary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.footer
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+
+markdown_extensions:
+  - attr_list
+  - def_list
+  - toc:
+      title: On this page
+
+nav:
+  - Home:
+    - Introduction: 'index.md'
+  - Writing:
+    - 'blog/index.md'
+plugins:
+  - blog:
+      post_excerpt_separator: <!-- more -->
+      post_readtime: false
+      post_date_format: full
+      blog_toc: true
+      blog_dir: blog
+      archive: true
+      archive_name: Archive
+      archive_date_format: yyyy
+      categories_name: Categories
+      categories_allowed:
+        - کلاف‌های ذهنی
+        - کامپیوتر
+        - 54days
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+  - search:
+      enabled: true
+
+copyright: Copyright &copy; 2024 S
